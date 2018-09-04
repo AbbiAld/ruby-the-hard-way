@@ -22,5 +22,5 @@ puts "The numbers: "
 
 
 numbers.each do |num|
-	puts "The number is: #{num}"
+	puts num
 end
