@@ -25,11 +25,5 @@ puts "I'm going to write these to the file."
 
 target.write("#{line1}\n#{line2}\n#{line3}\n")
 
-target = open(filename, 'r')
-target.seek(0)
-
-puts "Now I'll show you the file you just wrote: "
-print target.read
-
 puts "And finally, we close it."
 target.close
