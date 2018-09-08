@@ -36,6 +36,7 @@ end
 
 def user_guess(secret_number, numbers_guessed)
 	# Get a guess from user
+	print "> "
 	guess = gets.chomp.to_i
 
 	# If number hasn't been guessed before
@@ -58,15 +59,21 @@ def runner
 	numbers_guessed = []
 
 	guessed = false
-	while guessed != true
+	until guessed == true
 		guessed = user_guess(secret_number, numbers_guessed)
 	end
 	
 	number_of_guesses = numbers_guessed.length
 	puts "It took you #{number_of_guesses} tries to guess the secret number."
-	exit(0)
 end
 
-runner
 
+runner
+puts "Would you like to play again? YES or NO"
+play_again = gets.chomp.upcase
+unless play_again == "NO" 
+	runner
+	puts "Would you like to play again? YES or NO"
+	play_again = gets.chomp.upcase
+end
 
